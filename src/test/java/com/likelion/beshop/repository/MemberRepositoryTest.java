@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
+@Transactional
 @TestPropertySource(locations = "classpath:application-test.properties")
 public class MemberRepositoryTest {
 
@@ -15,7 +17,7 @@ public class MemberRepositoryTest {
     MemberRepository memberRepository;
 
     @Test
-    @DisplayName("상품 저장 테스트")
+    @DisplayName("회원가입 테스트")
     public void createMemberTest(){
         Member member = new Member();
         member.setName("장효선");
